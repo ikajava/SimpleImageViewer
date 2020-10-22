@@ -16,7 +16,7 @@ public final class ImageViewerController: UIViewController {
     
     public init(configuration: ImageViewerConfiguration?) {
         self.configuration = configuration
-        super.init(nibName: "ImageViewerController", bundle: Bundle(for: Self.self))//Bundle.module)
+        super.init(nibName: String(describing: type(of: self)), bundle: Bundle.module)
 
         modalPresentationStyle = .overFullScreen
         modalTransitionStyle = .crossDissolve
