@@ -12,7 +12,8 @@ let package = Package(
     targets: [
         .target(
             name: "SimpleImageViewer",
-            path: "ImageViewer"
+            path: "ImageViewer",
+            resources: [.process("Resources")]
         )
     ]
 )
