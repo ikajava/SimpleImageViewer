@@ -1,6 +1,7 @@
 import UIKit
 import AVFoundation
 
+
 public final class ImageViewerController: UIViewController {
     @IBOutlet fileprivate var scrollView: UIScrollView!
     @IBOutlet fileprivate var imageView: UIImageView!
@@ -15,7 +16,7 @@ public final class ImageViewerController: UIViewController {
     
     public init(configuration: ImageViewerConfiguration?) {
         self.configuration = configuration
-        super.init(nibName: "ImageViewerController", bundle: Bundle(for: type(of: self)))
+        super.init(nibName: "ImageViewerController", bundle: Bundle(for: Self.self))//Bundle.module)
 
         modalPresentationStyle = .overFullScreen
         modalTransitionStyle = .crossDissolve
