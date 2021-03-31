@@ -135,6 +135,7 @@ private extension ImageViewerController {
             let percentage = abs(translation.y + velocity.y) / imageView.bounds.height
             if percentage > 0.25 {
                 transitionHandler?.dismissalInteractor.finish()
+                dismiss(animated: true)
             } else {
                 transitionHandler?.dismissalInteractor.cancel()
             }
