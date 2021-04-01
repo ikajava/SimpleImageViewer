@@ -122,7 +122,6 @@ private extension ImageViewerController {
             
         let translation = recognizer.translation(in: imageView)
         let velocity = recognizer.velocity(in: imageView)
-        
         switch recognizer.state {
         case .began:
             transitionHandler?.dismissInteractively = true
@@ -136,7 +135,7 @@ private extension ImageViewerController {
             let percentage = abs(translation.y + velocity.y) / imageView.bounds.height
             if percentage > 0.25 {
                 transitionHandler?.dismissalInteractor.finish()
-                dismiss(animated: true)
+                configuration?.transitionDismissHandler?()
             } else {
                 transitionHandler?.dismissalInteractor.cancel()
             }
